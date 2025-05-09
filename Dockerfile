@@ -3,10 +3,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Configure ONNX Runtime environment (no additional system packages needed)
-ENV OMP_NUM_THREADS=4 \
-    OMP_WAIT_POLICY=PASSIVE \
-    KMP_AFFINITY=none
-    OMP_DISABLE_AFFINITY="TRUE"
+# Set all environment variables in proper Dockerfile syntax
+ENV OMP_NUM_THREADS=4
+ENV OMP_WAIT_POLICY=PASSIVE
+ENV KMP_AFFINITY=none
+ENV OMP_DISABLE_AFFINITY=TRUE
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
