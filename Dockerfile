@@ -8,6 +8,7 @@ ENV OMP_NUM_THREADS=4 \
     KMP_AFFINITY=disabled \
     TF_CPP_MIN_LOG_LEVEL=3 \
     ONNXRT_DISABLE_THREAD_AFFINITY=1 \
+    ONNXRUNTIME_DISABLE_CPU_AFFINITY=1 \
     OPENBLAS_NUM_THREADS=1
 
 # Install critical low-level dependencies
