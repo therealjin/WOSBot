@@ -6,8 +6,5 @@ if [ -z "$BOT_TOKEN" ]; then
   exit 1
 fi
 
-# Run the bot and pass the token and 'y' as input using a here document
-python3 main.py <<EOF
-$BOT_TOKEN
-y
-EOF
+# Run the bot with autoupdate flag and pass only the token
+python3 main.py --autoupdate "$BOT_TOKEN"
