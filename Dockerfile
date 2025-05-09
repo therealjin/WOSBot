@@ -6,12 +6,9 @@ WORKDIR /app
 ENV OMP_NUM_THREADS=4 \
     OMP_WAIT_POLICY=PASSIVE \
     KMP_AFFINITY=none \
+    ONNXRUNTIME_DISABLE_CPU_AFFINITY=1 \
     ONNXRT_DISABLE_THREAD_AFFINITY=TRUE 
 
-# Install libgomp via apt 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgomp1 \
-    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
