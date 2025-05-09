@@ -9,4 +9,5 @@ fi
 # Run the bot and pass the token and 'y' as input using a here document
 python3 main.py <<EOF
 $BOT_TOKEN
+y
 EOF
