@@ -15,6 +15,5 @@ COPY . .
 COPY run_bot.sh /app/run_bot.sh
 RUN chmod +x /app/run_bot.sh
 
-# Direct execution with auto-update
-CMD ["python", "main.py", "--autoupdate"]
+
 CMD ["./run_bot.sh"]
