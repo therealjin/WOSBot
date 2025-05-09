@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 
 # Check if BOT_TOKEN is set
 if [ -z "$BOT_TOKEN" ]; then
@@ -7,5 +6,8 @@ if [ -z "$BOT_TOKEN" ]; then
   exit 1
 fi
 
-# Run with auto-update and pass token via stdin
-printf "%s\ny" "$BOT_TOKEN" | python3 main.py --autoupdate
+# Run the bot and pass the token and 'y' as input using a here document
+python3 main.py <<EOF
+$BOT_TOKEN
+EOF
+python3 main.py --autoupdate
