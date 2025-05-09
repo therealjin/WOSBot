@@ -6,6 +6,7 @@ WORKDIR /app
 ENV OMP_NUM_THREADS=4 \
     OMP_WAIT_POLICY=PASSIVE \
     KMP_AFFINITY=none
+    OMP_DISABLE_AFFINITY=TRUE
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
