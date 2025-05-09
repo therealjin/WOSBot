@@ -10,4 +10,3 @@ fi
 python3 main.py <<EOF
 $BOT_TOKEN
 EOF
-python3 main.py --autoupdate
